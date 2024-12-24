@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osama Mohammed Saeed Ahmed Alhasani | Portfolio</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom, #f4f4f9, #e8e8ee);
+        }
+        header {
+            background: #2c2f33;
+            color: #fff;
+            padding: 40px 0;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #f4a261;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .header-text {
+            flex-grow: 1;
+            text-align: left;
+            color: #fff;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .header-text p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px 0;
+            background: #f4a261;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #2c2f33;
+            text-shadow: 0 0 5px #fff;
+        }
+
+        section {
+            padding: 30px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2c2f33;
+            border-bottom: 2px solid #f4a261;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill {
+    text-align: center;
+    flex: 1 1 calc(25% - 20px);
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures icons and text are vertically aligned */
+}
+.adobe-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FF6600, #FF6600); /* Optional for border styling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.adobe-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.adobe-icon:hover img {
+    transform: scale(1.2);
+    opacity: 0.9;
+}
+
+
+.skill i {
+    font-size: 2.5em;
+    color: #f4a261; /* Matches the theme */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill i:hover {
+    color: #2c2f33; /* Darker shade on hover */
+    transform: scale(1.2);
+}
+
+.skill p {
+    font-size: 1em;
+    font-weight: 600;
+    color: #2c2f33;
+}
+
+
+
+        .skill i:hover {
+            color: #2c2f33;
+            transform: scale(1.2);
+        }
+
+        .skills-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .skills-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skills-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills-gallery video {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skills-gallery video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        #contact {
+            padding: 30px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        #contact li {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        #contact i {
+            color: #333;
+            margin-right: 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        #contact i:hover {
+            color: #f4a261;
+        }
+
+        footer {
+            background: #2c2f33;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-size: 0.9em;
+            animation: fadeIn 2s ease;
+        }
+
+        footer p {
+            animation: fadeIn 2s ease;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <img src="images/profile_photo.jpg" alt="Profile Photo" class="profile-photo">
+        <div class="header-text">
+            <h1>Osama Mohammed Saeed Ahmed Alhasani</h1>
+            <p>Transforming Ideas into Visual Stories</p>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about-me">
+    <h2>About Me</h2>
+    <p>I’m a passionate graphic designer with <strong>over 5 years</strong> of experience in branding, Graphic Design, Videography, Photography, and video editor I strive to create impactful designs that resonate with audiences.</p>
+    <div class="skills-list">
+        <div class="skill">
+            <i class="fa-solid fa-palette"></i>
+            <p>Branding</p>
+        </div>
+        <div class="skill">
+            <i class="fa-solid fa-font"></i>
+            <p>Typography</p>
+        </div>
+        <div class="skill">
+            <i class="fa-solid fa-desktop"></i>
+            <p>Web/App Design</p>
+        </div>
+        <div class="skill adobe-cloud">
+            <!-- Replace 'images/adobe-creative-cloud.png' with the path to your local image -->
+            <div class="adobe-icon">
+                <img src="images/Adobe.png" alt="Adobe Creative Cloud" />
+            </div>
+            <p>Adobe Creative Cloud</p>
+        </div>
+    </div>
+    
+</section>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="project">
+        <h3>Photography & Videography</h3>
+        <div class="skills-gallery">
+            <div>
+                <a href="#photo1" class="lightbox-link">
+                    <img src="images/pic1.jpg" alt="Photography example 1">
+                </a>
+                <a href="#photo4" class="lightbox-link">
+                    <img src="images/pic4.jpg" alt="Photography example 1-1">
+                </a>
+            </div>
+            <a href="#photo2" class="lightbox-link">
+                <img src="images/pic2.jpg" alt="Photography example 2">
+            </a>
+            <div>
+                <a href="#photo3" class="lightbox-link">
+                    <img src="images/pic3.jpg" alt="Photography example 3">
+                </a>
+                <a href="#photo5" class="lightbox-link">
+                    <img src="images/pic5.jpg" alt="Photography example 3-1">
+                </a>
+            </div>
+        </div>
+
+        <div id="photo1" class="lightbox">
+            <img src="images/pic1.jpg" alt="Photography example 1">
+        </div>
+        <div id="photo4" class="lightbox">
+            <img src="images/pic4.jpg" alt="Photography example 1-1">
+        </div>
+        <div id="photo2" class="lightbox">
+            <img src="images/pic2.jpg" alt="Photography example 2">
+        </div>
+        <div id="photo3" class="lightbox">
+            <img src="images/pic3.jpg" alt="Photography example 3">
+        </div>
+        <div id="photo5" class="lightbox">
+            <img src="images/pic5.jpg" alt="Photography example 3-1">
+        </div>
+    </div>
+
+    <div class="project">
+        <h3>Graphic Design</h3>
+        <div class="skills-gallery">
+            <a href="#design1" class="lightbox-link">
+                <img src="images/photo1.jpg" alt="Graphic Design example 1">
+            </a>
+            <a href="#design2" class="lightbox-link">
+                <img src="images/photo2.jpg" alt="Graphic Design example 2">
+            </a>
+            <a href="#design3" class="lightbox-link">
+                <img src="images/photo3.jpg" alt="Graphic Design example 3">
+            </a>
+        </div>
+
+        <div id="design1" class="lightbox">
+            <img src="images/photo1.jpg" alt="Graphic Design example 1">
+        </div>
+        <div id="design2" class="lightbox">
+            <img src="images/photo2.jpg" alt="Graphic Design example 2">
+        </div>
+        <div id="design3" class="lightbox">
+            <img src="images/photo3.jpg" alt="Graphic Design example 3">
+        </div>
+    </div>
+
+    <div class="project">
+        <h3>Video Editing</h3>
+        <div class="skills-gallery">
+            <a href="#video1" class="lightbox-link">
+                <video controls>
+                    <source src="VIDEOS/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+            <a href="#video2" class="lightbox-link">
+                <video controls>
+                    <source src="VIDEOS/video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+            <a href="#video3" class="lightbox-link">
+                <video controls>
+                    <source src="VIDEOS/video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+        </div>
+
+        <div id="video1" class="lightbox">
+            <video width="90%" controls>
+                <source src="VIDEOS/video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div id="video2" class="lightbox">
+            <video width="90%" controls>
+                <source src="VIDEOS/video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div id="video3" class="lightbox">
+            <video width="90%" controls>
+                <source src="VIDEOS/video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<section id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+        <li>Dean’s List Award for academic excellence</li>
+        <li>ICON Student Leader recognition at LC</li>
+        <li>Graphic Designer for STEAM Club initiatives</li>
+        <li>Extensive voluntary contributions to community-driven projects</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact">
+        <li>
+            <i class="fa-solid fa-envelope"></i>
+            Email: <a href="mailto:alhasaniosama42@gmail.com">alhasaniosama42@gmail.com</a>
+        </li>
+        <li>
+            <i class="fa-solid fa-phone"></i>
+            Phone: <a href="https://wa.me/60196176874" target="_blank">+60196176874</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-instagram"></i>
+            Instagram: <a href="https://instagram.com/os_hasani" target="_blank">@os_hasani</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-facebook"></i>
+            Facebook: <a href="https://facebook.com/osama.alhasani" target="_blank">Osama Alhasani</a>
+        </li>
+    </ul>
+</section>
+
+
+<footer>
+    <p>&copy; 2024 Osama Mohammed Saeed Ahmed Alhasani. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
